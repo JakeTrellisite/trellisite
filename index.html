@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trellisite — Websites that help your business grow</title>
+<meta name="description" content="Trellisite builds, hosts, and fixes websites for small businesses. New sites, hosting and care, and updates to the site you already have.">
+<meta property="og:title" content="Trellisite — Websites that help your business grow">
+<meta property="og:description" content="New websites, hosting and care, and fixes for the site you already have.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1d3a2a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231d3a2a'/%3E%3Cpath d='M6 26 26 6M6 16 16 6M16 26 26 16M6 6l20 20M6 16l10 10M16 6l10 10' stroke='%239cc28a' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#eef2ea;
+    --ground-2:#e2e9dc;
+    --ink:#15241b;
+    --ink-soft:#44544a;
+    --forest:#1d3a2a;
+    --leaf:#3f7a4a;
+    --vine:#9cc28a;
+    --bloom:#e6a93a;
+    --white:#fbfcf9;
+    --display:"Bricolage Grotesque", system-ui, sans-serif;
+    --body:"Figtree", system-ui, sans-serif;
+    --wrap:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--ground);color:var(--ink);font:400 1.0625rem/1.6 var(--body);-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--bloom);outline-offset:3px;border-radius:4px}
+  .wrap{width:min(var(--wrap),100% - 32px);margin-inline:auto}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:16px;top:16px;background:var(--white);padding:8px 12px;z-index:10}
+
+  /* Header */
+  header.site{padding:22px 0}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.35rem/1 var(--display);letter-spacing:-.02em;color:var(--forest)}
+  .logo svg{width:30px;height:30px}
+  nav.main{display:flex;gap:28px;align-items:center}
+  nav.main a{text-decoration:none;font-weight:500;color:var(--ink-soft)}
+  nav.main a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:999px;font:600 1rem/1 var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .btn-primary{background:var(--forest);color:var(--white)}
+  .btn-primary:hover{background:var(--leaf)}
+  .btn-ghost{border-color:var(--forest);color:var(--forest)}
+  .btn-ghost:hover{background:var(--forest);color:var(--white)}
+  nav.main .btn{padding:10px 18px;color:var(--white)}
+  nav.main .btn:hover{color:var(--white)}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:56px 0 96px}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+  .hero h1{font:800 clamp(2.6rem,6.2vw,5rem)/.98 var(--display);letter-spacing:-.035em;margin:0 0 24px;color:var(--forest);max-width:12ch}
+  .hero p.lede{font-size:1.25rem;line-height:1.55;color:var(--ink-soft);max-width:34ch;margin:0 0 32px}
+  .hero .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .lattice{width:100%;aspect-ratio:1/1;max-width:460px;justify-self:end}
+  .lattice .slat{stroke:var(--forest);stroke-width:6;stroke-linecap:round;opacity:.9}
+  .lattice .frame{fill:none;stroke:var(--forest);stroke-width:8}
+  .lattice .vine{fill:none;stroke:var(--leaf);stroke-width:5;stroke-linecap:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:grow 3.2s 0.3s cubic-bezier(.45,.05,.3,1) forwards}
+  .lattice .leaf{fill:var(--vine);transform-box:fill-box;transform-origin:center;transform:scale(0);animation:pop .5s cubic-bezier(.3,1.6,.5,1) forwards}
+  .lattice .flower{fill:var(--bloom);transform-box:fill-box;transform-origin:center;transform:scale(0);animation:pop .6s 3.2s cubic-bezier(.3,1.6,.5,1) forwards}
+  @keyframes grow{to{stroke-dashoffset:0}}
+  @keyframes pop{to{transform:scale(1)}}
+
+  /* Sections */
+  section{padding:96px 0}
+  h2{font:800 clamp(2rem,4vw,3rem)/1.05 var(--display);letter-spacing:-.03em;margin:0 0 16px;color:var(--forest);max-width:20ch}
+  .intro{color:var(--ink-soft);font-size:1.15rem;max-width:56ch;margin:0 0 56px}
+
+  /* Services */
+  #services{background:var(--forest);color:var(--white)}
+  #services h2{color:var(--white)}
+  #services .intro{color:#c9d8c4}
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid rgba(156,194,138,.35)}
+  .service{padding:36px 32px 8px 0}
+  .service + .service{padding-left:32px;border-left:2px solid rgba(156,194,138,.35)}
+  .service svg{width:44px;height:44px;margin-bottom:20px}
+  .service h3{font:700 1.5rem/1.15 var(--display);letter-spacing:-.02em;margin:0 0 12px;color:var(--white)}
+  .service p{color:#c9d8c4;margin:0 0 16px}
+  .service ul{list-style:none;padding:0;margin:0}
+  .service li{padding:8px 0 8px 22px;position:relative;color:#e6eee2}
+  .service li::before{content:"";position:absolute;left:0;top:.95em;width:9px;height:9px;background:var(--vine);transform:rotate(45deg)}
+
+  /* Process */
+  .steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;counter-reset:step;position:relative}
+  .steps::before{content:"";position:absolute;top:27px;left:28px;width:calc(75% - 4px);height:2px;background:repeating-linear-gradient(90deg,var(--leaf) 0 10px,transparent 10px 18px)}
+  .steps li{counter-increment:step;position:relative}
+  .steps li::before{content:counter(step);display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--ground);border:2px solid var(--leaf);font:800 1.4rem/1 var(--display);color:var(--forest);margin-bottom:20px;position:relative}
+  .steps h3{font:700 1.3rem/1.2 var(--display);margin:0 0 8px;color:var(--forest)}
+  .steps p{margin:0;color:var(--ink-soft)}
+
+  /* Why */
+  #why{background:var(--ground-2)}
+  .why{display:grid;grid-template-columns:1fr 1fr;gap:20px 64px}
+  .why div{padding:24px 0;border-top:2px solid var(--forest)}
+  .why h3{font:700 1.25rem/1.2 var(--display);margin:0 0 8px;color:var(--forest)}
+  .why p{margin:0;color:var(--ink-soft);max-width:44ch}
+
+  /* Next */
+  .next{display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;padding:40px;border:2px dashed var(--leaf);border-radius:20px}
+  .next svg{width:72px;height:72px}
+  .next h2{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:8px}
+  .next p{margin:0;color:var(--ink-soft);max-width:60ch}
+
+  /* Contact */
+  #contact{background:var(--forest);color:var(--white);text-align:left}
+  #contact h2{color:var(--white);max-width:16ch}
+  #contact .intro{color:#c9d8c4;margin-bottom:36px}
+  #contact .btn-primary{background:var(--bloom);color:var(--forest);font-size:1.1rem;padding:16px 28px}
+  #contact .btn-primary:hover{background:var(--white)}
+  .contact-row{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center}
+  .contact-row a.email{color:var(--vine);font-weight:600;text-underline-offset:4px}
+
+  footer{padding:32px 0;color:var(--ink-soft);font-size:.95rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:900px){
+    nav.main a:not(.btn){display:none}
+    .hero .wrap{grid-template-columns:1fr}
+    .lattice{max-width:300px;justify-self:start;order:-1}
+    .services{grid-template-columns:1fr}
+    .service,.service + .service{padding:32px 0;border-left:0;border-bottom:2px solid rgba(156,194,138,.35)}
+    .steps{grid-template-columns:1fr 1fr}
+    .steps::before{display:none}
+    .why{grid-template-columns:1fr}
+    .next{grid-template-columns:1fr;padding:28px}
+  }
+  @media (max-width:560px){
+    section{padding:72px 0}
+    .hero{padding:24px 0 72px}
+    .steps{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .lattice .vine{animation:none;stroke-dashoffset:0}
+    .lattice .leaf,.lattice .flower{animation:none;transform:none}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Trellisite home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#1d3a2a"/><path d="M6 26 26 6M6 16 16 6M16 26 26 16M6 6l20 20M6 16l10 10M16 6l10 10" stroke="#9cc28a" stroke-width="2"/></svg>
+      Trellisite
+    </a>
+    <nav class="main" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#why">Why Trellisite</a>
+      <a class="btn btn-primary" href="#contact">Get a free quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-title">Websites that help your business grow.</h1>
+        <p class="lede">We build new websites, keep them hosted and running, and fix up the site you already have, so you can get back to running your business.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Get a free quote</a>
+          <a class="btn btn-ghost" href="#services">See services</a>
+        </div>
+      </div>
+
+      <svg class="lattice" viewBox="0 0 400 400" role="img" aria-label="A vine growing up a garden trellis">
+        <defs><clipPath id="clip"><rect x="20" y="20" width="360" height="360" rx="24"/></clipPath></defs>
+        <g clip-path="url(#clip)">
+          <g class="slats">
+            <line class="slat" x1="-200" y1="400" x2="200" y2="0"/><line class="slat" x1="-110" y1="400" x2="290" y2="0"/>
+            <line class="slat" x1="-20" y1="400" x2="380" y2="0"/><line class="slat" x1="70" y1="400" x2="470" y2="0"/>
+            <line class="slat" x1="160" y1="400" x2="560" y2="0"/><line class="slat" x1="250" y1="400" x2="650" y2="0"/>
+            <line class="slat" x1="-200" y1="0" x2="200" y2="400"/><line class="slat" x1="-110" y1="0" x2="290" y2="400"/>
+            <line class="slat" x1="-20" y1="0" x2="380" y2="400"/><line class="slat" x1="70" y1="0" x2="470" y2="400"/>
+            <line class="slat" x1="160" y1="0" x2="560" y2="400"/><line class="slat" x1="250" y1="0" x2="650" y2="400"/>
+          </g>
+          <path class="vine" d="M200 400 C 200 340, 150 330, 155 280 S 250 230, 240 180 S 140 140, 170 95 S 260 70, 250 40"/>
+          <path class="vine" style="animation-delay:1.4s;stroke-dasharray:400;stroke-dashoffset:400" d="M156 285 C 120 270, 90 250, 80 215"/>
+          <path class="vine" style="animation-delay:2s;stroke-dasharray:400;stroke-dashoffset:400" d="M238 190 C 280 175, 305 150, 315 120"/>
+        </g>
+        <rect class="frame" x="20" y="20" width="360" height="360" rx="24"/>
+        <ellipse class="leaf" style="animation-delay:.9s" cx="176" cy="318" rx="16" ry="9" transform="rotate(-30 176 318)"/>
+        <ellipse class="leaf" style="animation-delay:1.3s" cx="135" cy="290" rx="15" ry="8" transform="rotate(25 135 290)"/>
+        <ellipse class="leaf" style="animation-delay:1.9s" cx="88" cy="232" rx="14" ry="8" transform="rotate(60 88 232)"/>
+        <ellipse class="leaf" style="animation-delay:2s" cx="232" cy="225" rx="16" ry="9" transform="rotate(-40 232 225)"/>
+        <ellipse class="leaf" style="animation-delay:2.5s" cx="300" cy="145" rx="14" ry="8" transform="rotate(-55 300 145)"/>
+        <ellipse class="leaf" style="animation-delay:2.4s" cx="168" cy="130" rx="15" ry="8" transform="rotate(35 168 130)"/>
+        <ellipse class="leaf" style="animation-delay:3s" cx="232" cy="70" rx="14" ry="8" transform="rotate(-25 232 70)"/>
+        <circle class="flower" cx="250" cy="40" r="13"/>
+        <circle class="flower" style="animation-delay:3.4s" cx="315" cy="118" r="10"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <h2 id="services-title">What we do</h2>
+      <p class="intro">Whether you're starting from nothing or your current site needs work, we'll handle the technical side and keep things simple for you.</p>
+
+      <div class="services">
+        <article class="service">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#9cc28a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="36" height="28" rx="4"/><path d="M4 14h36M15 41h14M22 35v6"/><path d="M14 27l5-6 4 4 7-8"/></svg>
+          <h3>New websites</h3>
+          <p>A custom site built around your business, not a cookie-cutter template.</p>
+          <ul>
+            <li>Designed to look great on phones</li>
+            <li>Clear pages for your services and contact info</li>
+            <li>Set up so customers can find you on Google</li>
+          </ul>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#9cc28a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="6" width="30" height="12" rx="3"/><rect x="7" y="26" width="30" height="12" rx="3"/><path d="M13 12h.01M13 32h.01M22 18v8"/></svg>
+          <h3>Hosting &amp; care</h3>
+          <p>We keep your site online, fast, and secure, and handle updates for you.</p>
+          <ul>
+            <li>Reliable hosting and your domain set up</li>
+            <li>Secure HTTPS included</li>
+            <li>Text, photo, and hours changes when you need them</li>
+          </ul>
+        </article>
+        <article class="service">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#9cc28a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M27 7a8 8 0 0 0-9 11L7 29a3.5 3.5 0 0 0 5 5l11-11a8 8 0 0 0 11-9l-5 5-5-1-1-5z"/></svg>
+          <h3>Website fixes &amp; updates</h3>
+          <p>Already have a site? We'll refresh it, fix what's broken, or add what's missing.</p>
+          <ul>
+            <li>Modern redesigns of outdated sites</li>
+            <li>Fixes for broken pages, links, and layouts</li>
+            <li>New pages, forms, and features</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" aria-labelledby="process-title">
+    <div class="wrap">
+      <h2 id="process-title">How it works</h2>
+      <p class="intro">A straightforward process with no surprises along the way.</p>
+      <ol class="steps">
+        <li><h3>Talk it through</h3><p>Tell us about your business and what you need from your website.</p></li>
+        <li><h3>Get a plan</h3><p>We'll send a clear quote and timeline before any work begins.</p></li>
+        <li><h3>Build &amp; review</h3><p>We build your site and adjust it with your feedback until it's right.</p></li>
+        <li><h3>Launch &amp; grow</h3><p>Your site goes live, and we're here for updates as your business changes.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="why" aria-labelledby="why-title">
+    <div class="wrap">
+      <h2 id="why-title">Why work with Trellisite</h2>
+      <p class="intro">You get a real person who answers your questions and takes care of the details.</p>
+      <div class="why">
+        <div><h3>One point of contact</h3><p>You work directly with the person building your site, start to finish.</p></div>
+        <div><h3>Plain-English updates</h3><p>No tech jargon. You'll always know what's happening and why.</p></div>
+        <div><h3>Built for small businesses</h3><p>Sites made to bring in customers, sized for your budget.</p></div>
+        <div><h3>Here after launch</h3><p>Need a change next month or next year? Just reach out.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="next-title">
+    <div class="wrap">
+      <div class="next">
+        <svg viewBox="0 0 72 72" fill="none" aria-hidden="true"><circle cx="36" cy="36" r="34" stroke="#3f7a4a" stroke-width="2.5" stroke-dasharray="6 6"/><path d="M36 54V30" stroke="#3f7a4a" stroke-width="3" stroke-linecap="round"/><path d="M36 38c-8 0-12-5-12-12 8 0 12 5 12 12zM36 32c0-8 5-13 13-13 0 8-5 13-13 13z" fill="#9cc28a"/><circle cx="36" cy="26" r="0"/></svg>
+        <div>
+          <h2 id="next-title">AI tools for your business are on the way</h2>
+          <p>We're building AI services to help small businesses save time, like answering common customer questions and handling routine tasks. Ask us about it when you get in touch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <h2 id="contact-title">Let's build something that grows with you.</h2>
+      <p class="intro">Tell us a little about your business and what you're looking for. We'll get back to you with ideas and a free quote.</p>
+      <div class="contact-row">
+        <a class="btn btn-primary" href="mailto:hello@trellisite.com?subject=Website%20quote%20request">Email us for a free quote</a>
+        <a class="email" href="mailto:hello@trellisite.com">hello@trellisite.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> Trellisite</span>
+    <span>Websites for small businesses</span>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
