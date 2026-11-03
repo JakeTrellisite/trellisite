@@ -78,9 +78,8 @@
   #services{background:var(--forest);color:var(--white)}
   #services h2{color:var(--white)}
   #services .intro{color:#c9d8c4}
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid rgba(156,194,138,.35)}
-  .service{padding:36px 32px 8px 0}
-  .service + .service{padding-left:32px;border-left:2px solid rgba(156,194,138,.35)}
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:0 64px}
+  .service{padding:36px 0 40px;border-top:2px solid rgba(156,194,138,.35)}
   .service svg{width:44px;height:44px;margin-bottom:20px}
   .service h3{font:700 1.5rem/1.15 var(--display);letter-spacing:-.02em;margin:0 0 12px;color:var(--white)}
   .service p{color:#c9d8c4;margin:0 0 16px}
@@ -126,7 +125,7 @@
     .hero .wrap{grid-template-columns:1fr}
     .lattice{max-width:300px;justify-self:start;order:-1}
     .services{grid-template-columns:1fr}
-    .service,.service + .service{padding:32px 0;border-left:0;border-bottom:2px solid rgba(156,194,138,.35)}
+    .service{padding:32px 0}
     .steps{grid-template-columns:1fr 1fr}
     .steps::before{display:none}
     .why{grid-template-columns:1fr}
@@ -167,7 +166,7 @@
     <div class="wrap">
       <div>
         <h1 id="hero-title">Websites that help your business grow.</h1>
-        <p class="lede">We build new websites, keep them hosted and running, and fix up the site you already have, so you can get back to running your business.</p>
+        <p class="lede">We build new websites, keep them hosted and running, and fix up the site you already have, and help you earn more reviews, so you can get back to running your business.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#contact">Get a free quote</a>
           <a class="btn btn-ghost" href="#services">See services</a>
@@ -239,6 +238,16 @@
             <li>New pages, forms, and features</li>
           </ul>
         </article>
+        <article class="service">
+          <svg viewBox="0 0 44 44" fill="none" stroke="#9cc28a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v17a4 4 0 0 1-4 4H19l-8 7v-7h-1a4 4 0 0 1-4-4z"/><path d="M22 10.5l2.3 4.6 5.1.8-3.7 3.6.9 5.1-4.6-2.4-4.6 2.4.9-5.1-3.7-3.6 5.1-.8z"/></svg>
+          <h3>Reviews &amp; replies</h3>
+          <p>Get more Google reviews from happy customers, and never leave a review unanswered.</p>
+          <ul>
+            <li>Review requests sent to customers after each job</li>
+            <li>Automatic, personalized replies to every Google review</li>
+            <li>More reviews help you stand out in local searches</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
@@ -274,8 +283,8 @@
       <div class="next">
         <svg viewBox="0 0 72 72" fill="none" aria-hidden="true"><circle cx="36" cy="36" r="34" stroke="#3f7a4a" stroke-width="2.5" stroke-dasharray="6 6"/><path d="M36 54V30" stroke="#3f7a4a" stroke-width="3" stroke-linecap="round"/><path d="M36 38c-8 0-12-5-12-12 8 0 12 5 12 12zM36 32c0-8 5-13 13-13 0 8-5 13-13 13z" fill="#9cc28a"/><circle cx="36" cy="26" r="0"/></svg>
         <div>
-          <h2 id="next-title">AI tools for your business are on the way</h2>
-          <p>We're building AI services to help small businesses save time, like answering common customer questions and handling routine tasks. Ask us about it when you get in touch.</p>
+          <h2 id="next-title">More automation is on the way</h2>
+          <p>We're building more AI tools to help businesses save time, like answering common customer questions and handling routine tasks. Ask us about it when you get in touch.</p>
         </div>
       </div>
     </div>
@@ -296,7 +305,7 @@
 <footer>
   <div class="wrap">
     <span>&copy; <span id="yr">2026</span> Trellisite</span>
-    <span>Websites for small businesses</span>
+    <span>Websites &amp; automation</span>
   </div>
 </footer>
 <script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
